@@ -26,9 +26,10 @@ public extension BWEngine {
     public func parseServiceAnalytics(action: String, var andParams params: [String : AnyObject]? = nil) {
         if (params == nil) {
             params = [:]
-        } else {
-            params = ["dimensions": params!]
         }
+            params!.updateValue("iOS", forKey: "OS")
+            params!.updateValue(Config.appId as String!, forKey: "App")
+            params = ["dimensions": params!]
         
         self.parseNetwork?.request(.POST, String(format: Parse.urlAnalytics, arguments: [action]), parameters: params, encoding: .JSON, headers: nil).responseJSON(completionHandler: { (reponse) -> Void in
             

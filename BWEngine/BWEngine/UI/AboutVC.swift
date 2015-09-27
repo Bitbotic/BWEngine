@@ -52,6 +52,12 @@ class AboutVC: UIViewController {
         configureNavigationBar()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        BWEngine.sharedInstance.parseServiceAnalytics(ParseAnalytics.actionOpenAbout)
+    }
+    
     //MARK: Configure
     
     private func configureNavigationBar() {

@@ -39,7 +39,7 @@ public class BWEngine: NSObject {
         if (isNotFirstTimeDidBecomeActive) {
         } else {
             isNotFirstTimeDidBecomeActive = true
-            parseServiceAnalytics("AppOpened", andParams: ["app": Config.appId as String!])
+            parseServiceAnalytics("AppOpened")
         }
     }
     
