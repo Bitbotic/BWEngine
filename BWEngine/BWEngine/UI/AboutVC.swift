@@ -56,5 +56,13 @@ class AboutVC: UIViewController {
     
     private func configureNavigationBar() {
         title = "BitWeeks"
+        
+        if navigationController?.viewControllers.count == 1 {
+            navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Close", style: .Done, target: self, action: Selector("closeView"))
+        }
+    }
+    
+    func closeView() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
