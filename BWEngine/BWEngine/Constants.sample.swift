@@ -12,10 +12,14 @@ struct Parse {
 #if DEBUG
     static let appId = ""
     static let appKey = ""
+    static let host = ""
 #else
     static let appId = ""
     static let appKey = ""
+    static let host = ""
 #endif
+    
+    static let urlAnalytics = "https://api.parse.com/1/events/%@"
 }
 
 struct Config {

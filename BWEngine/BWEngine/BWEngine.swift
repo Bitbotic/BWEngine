@@ -12,16 +12,18 @@ import Alamofire
 public class BWEngine: NSObject {
     internal var parseNetwork: Alamofire.Manager?
     internal var isNotFirstTimeDidBecomeActive: Bool
+    
     public static let sharedInstance: BWEngine = {
         return BWEngine()
     }()
     
     private override init() {
         isNotFirstTimeDidBecomeActive = false
+        
         super.init()
+        
         configureNotifications()
         parseConfiguration()
-        print("\(Config.appId)")
     }
     
     //MARK: - Configure
